@@ -3,9 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index</title>
+    <title>Forest Fire Prediction System</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body{
+            min-height:100vh;
+            background: linear-gradient(135deg,#0f172a,#1e293b,#2563eb);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            color:white;
+        }
+
+        .container{
+            text-align:center;
+            max-width:800px;
+            padding:40px;
+        }
+
+        .logo{
+            font-size:70px;
+            margin-bottom:15px;
+        }
+
+        h1{
+            font-size:3rem;
+            margin-bottom:15px;
+        }
+
+        .subtitle{
+            font-size:1.2rem;
+            color:#dbeafe;
+            margin-bottom:30px;
+            line-height:1.6;
+        }
+
+        .card{
+            background:rgba(255,255,255,0.1);
+            backdrop-filter:blur(10px);
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .features{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+            gap:15px;
+            margin:25px 0;
+        }
+
+        .feature-box{
+            background:rgba(255,255,255,0.08);
+            padding:15px;
+            border-radius:12px;
+        }
+
+        .feature-box h3{
+            margin-bottom:10px;
+        }
+
+        .btn{
+            display:inline-block;
+            margin-top:25px;
+            padding:14px 35px;
+            background:#22c55e;
+            color:white;
+            text-decoration:none;
+            border-radius:10px;
+            font-size:18px;
+            font-weight:bold;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#16a34a;
+            transform:translateY(-2px);
+        }
+
+        footer{
+            margin-top:30px;
+            color:#cbd5e1;
+            font-size:14px;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Welcome to the home page</h1>
+
+<div class="container">
+
+    <div class="logo">🔥</div>
+
+    <div class="card">
+
+        <h1>Forest Fire Prediction System</h1>
+
+        <p class="subtitle">
+            An End-to-End Machine Learning Application that predicts the
+            Fire Weather Index (FWI) using environmental and meteorological data.
+            This system helps analyze fire risk and supports early decision-making.
+        </p>
+
+        <div class="features">
+
+            <div class="feature-box">
+                <h3>🌡 Temperature</h3>
+                <p>Analyze temperature impact on fire risk.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>💧 Humidity</h3>
+                <p>Evaluate relative humidity conditions.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>🌧 Rainfall</h3>
+                <p>Include rainfall data for prediction.</p>
+            </div>
+
+            <div class="feature-box">
+                <h3>🤖 Machine Learning</h3>
+                <p>Generate accurate FWI predictions.</p>
+            </div>
+
+        </div>
+
+        <a href="{{ url_for('predict_datapoint') }}" class="btn">
+            Start Prediction →
+        </a>
+
+    </div>
+
+    <footer>
+        Developed using Flask, Machine Learning & AWS Elastic Beanstalk
+    </footer>
+
+</div>
+
 </body>
 </html>
